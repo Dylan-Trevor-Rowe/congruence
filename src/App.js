@@ -1,30 +1,14 @@
-
-import React from 'react'
-import { useState } from 'react'
-import './App.css';
-import Body from  './illust57-4505.jpg'
+import { Route, BrowserRouter } from "react-router-dom"
+import React from "react"
+import { MainPage } from './MainPage'
 
 
-function App() {
+export const App = (props) => {
 
-// const [localState, setLocalState] = useState({
+  return <>
+      <BrowserRouter>
 
-// })  
-
-
-const handleControlledInputChange = (e) => {
-var x = e.clientX;
-var y = e.clientY; 
-var coor = "X coords: " + x + ", Y coords: " + y;
-console.log(coor)
- }
-
-  return (
-    <div onMouseMove={handleControlledInputChange} className="fullScreen">
-    <img className="bodyImage" src={Body}></img>
- 
-    </div>
-  );
+        <MainPage {...props} />
+      </BrowserRouter>
+  </>
 }
-
-export default App;
